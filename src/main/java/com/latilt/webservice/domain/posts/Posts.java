@@ -4,6 +4,7 @@ package com.latilt.webservice.domain.posts;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import com.latilt.webservice.domain.BaseTimeEntity;
@@ -19,7 +20,7 @@ import lombok.NoArgsConstructor;
 public class Posts extends BaseTimeEntity {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
 	@Column(length = 500, nullable = false)
